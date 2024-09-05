@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f00,#f00,#0f0,#0ff,#ff0,#0ff);
+    mix-blend-mode: color;
+    pointer-events: none;
+}
+
+video {
+    object-fit: cover;
+}
+
+/* New rainbow text */
+.rainbow-text {
+    text-align: center;
+    font-size: 2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: absolute;
+    top:-10px; /* Moved slightly above */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Center the image */
+.center-image {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 60px; /* Adjusted to allow space for the text */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    height: auto;
+    z-index: 1;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: #ddd;
+    font-size: 3em;
+    font-family: sans-serif;
+    letter-spacing: 0.010em;
+    opacity: 100;
+}
+
+h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+h2 {
+    color: #ddd;
+    text-align: center;
+}
+
+/* Typewriter effect */
+.typewriter {
+    position: absolute;
+    bottom: 100px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    font-family: monospace;
+}
+
+#typewriter-text {
+    border-right: 2px solid #fff;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Rainbow effect for each character */
+.rainbow {
+    animation: rainbowColors 7s infinite linear;
+}
+
+@keyframes rainbowColors {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    56% { color: blue; }
+    70% { color: indigo; }
+    84% { color: violet; }
+    100% { color: red; }
+}
